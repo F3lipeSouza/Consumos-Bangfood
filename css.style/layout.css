@@ -1,0 +1,57 @@
+.loginContainer{
+    display: flex;
+    height: 100vh;
+}
+
+.sectionLeaft{
+    background-color: #FF972B;
+    width: 60%;
+    height: 100vh;
+}
+
+.containerTitle{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgfoot{
+    display: flex;
+    flex-direction: column;
+}
+
+.imgCard{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+
+.sectionRigth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcd3a1;
+    width: 40%;
+}
+
+#section-form{
+    height: 100vh;
+}
+
+.back{
+    background-image:url("../imagens/fundo.consumo.png");
+}
+
+@media screen and (max-width: 1300px) {
+
+    .sectionLeaft{
+        width: 0px;
+    }
+
+    .sectionRigth{
+        width: 100%;
+    }
+}

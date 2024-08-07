@@ -1,0 +1,93 @@
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.inputLine{
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 40px;
+    padding: 8px;
+    font-size: 24px;
+    border-radius: 16px;
+    border: 4px, solid, black;
+    background-color: #fcd3a1;
+}
+
+.containerInput{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 36px;
+}
+
+.submit{
+    background-color: #fcd3a1;
+    width: 40px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 16px;
+    border: 4px, solid, black;
+}
+
+.total-align{
+    display: flex;
+    padding-top: 36px;
+    padding-right: 36px;
+    justify-content: flex-end;
+}
+
+.total{
+    display: flex;
+}
+
+.containerButton{
+    display: flex;
+    justify-content:space-between ;
+    width: 420px;
+}
+
+.button{
+    background-color: #fcd3a1;
+    border-radius: 16px;
+    border: 4px, solid, black;
+    height: 42px;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: #FF972B;
+    border-radius: 16px;
+    border: 4px, solid, black;
+    height: 42px;
+    font-size: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.Cadastro{
+    width: 200px;
+
+}
+
+.entrar{
+    width: 180px;
+}
+
+@media screen and (max-width: 1400px) {
+
+    .containerInput{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .submit{
+        width: 420px;
+    }
+
+    
+}

@@ -1,0 +1,88 @@
+.titleLogin{
+    font-size: 15rem;
+    color: yellow;
+    -webkit-text-stroke-color: orange;
+    -webkit-text-stroke-width: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginTitle{
+    font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.titleBangFood{
+    font-size: 10rem;
+    color: orangered;
+    text-shadow:0.00em 0.05em  yellow;
+}
+
+.Bang{
+    margin-left: 150px;
+}
+
+.food{
+    text-shadow:-0.03em -0.05em  yellow;
+    margin-left: 400px;
+}
+
+.consumosTitle{
+    background-color: #fcd3a1;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
+    font-family: "Cherry Swash", serif;
+
+}
+
+.subTitle{
+    background-color: transparent;
+    font-size: 5rem;
+    justify-content: flex-start;
+    padding-left: 24px;
+}
+
+@media screen and (max-width: 1415px) {
+    .titleBangFood{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Bang{
+        margin-left: 0;
+    }
+
+    .food{
+        margin-left: 0;
+    }
+    
+}
+
+@media screen and (max-width: 1300px) {
+    .loginTitle{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 615px) {
+
+    .subTitle{
+        padding-top: 45px;
+    }
+    
+}
+
+
+    
