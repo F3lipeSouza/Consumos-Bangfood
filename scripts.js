@@ -29,11 +29,27 @@ function validaDados (){
 
 const creatTable = () =>{
     let tdQuant = document.createElement('td');
-    tdQuant.innerHTML = consumidos.quantidade;
+    tdQuant.innerHTML = consumidos[consumidos.length -1].quantidade;
+
+    let tdProduto = document.createElement('td');
+    tdProduto.innerHTML = consumidos[consumidos.length -1].produto;
+
+    let tdValor = document.createElement('td');
+    tdValor.innerHTML = consumidos[consumidos.length -1].valor;
+
+    let btnApaga = document.createElement('button');
+    btnApaga.innerHTML = 'X';
+
+    let tdApaga = document.createElement('td');
+    tdApaga.append(btnApaga);
     
 
 
     console.log(tdQuant);
+    console.log(tdProduto);
+    console.log(tdValor);
+    console.log(btnApaga);
+    console.log(tdApaga);
 }
 
  
@@ -45,6 +61,6 @@ formulario.addEventListener('submit', (evento) => {
 
     consumidos.push({produto:produto.value, quantidade:quantidade.value, valor:valor.value});
     console.log(consumidos);
-    }
     creatTable();
+    }
 });
