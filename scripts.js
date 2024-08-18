@@ -42,14 +42,18 @@ const creatTable = () =>{
 
     let tdApaga = document.createElement('td');
     tdApaga.append(btnApaga);
+
+    let postTable = document.createElement('tr');
+    postTable.append(tdQuant, tdProduto, tdValor, tdApaga);
+
+    let table = document.querySelector('.tabela');
+    table.append(postTable);
+
     
-
-
-    console.log(tdQuant);
-    console.log(tdProduto);
-    console.log(tdValor);
-    console.log(btnApaga);
-    console.log(tdApaga);
+    
+    console.log(tdProduto, tdQuant, tdValor, tdApaga);
+    console.log('este é o posttable:', postTable);
+    console.log('este é o table:', table);
 }
 
  
