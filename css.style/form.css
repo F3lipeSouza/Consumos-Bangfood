@@ -95,12 +95,13 @@ tr{
     display: flex;
     margin-top: 12px;
     margin-left: 24px;
+    width: max-content;
     gap: 16px;
     font-size: 2.8rem;
     background-color: #fcd3a1;
     border-radius: 8px;
     border: solid, 2px, black;
-    padding: 6px;
+    padding: 5px 16px ;
 }
 
 td{
