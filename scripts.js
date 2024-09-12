@@ -4,6 +4,7 @@ const produto = formulario.querySelector('#inputproduto');
 const quantidade = formulario.querySelector('#inputquantidade');
 const valor = formulario.querySelector('#inputvalor');
 const tabela = document.querySelector('table');
+const valorTotal = document.querySelector('#total');
 
 //cria lista dos produtos que foram consumidos;
 let consumidos = [];
@@ -31,19 +32,18 @@ function validaDados (){
     
 }
 
-
+ const tagTd = (inf)=>{
+    document.createElement('td');
+    innerHTML = consumidos[consumidos.length -1].inf;
+    return inf.value
+ }
 
 //cria tabela dinamica de produtos consumidos;
 const creatTable = () =>{
     //cria tabela na memoria;
-    let tdQuant = document.createElement('td');
-    tdQuant.innerHTML = consumidos[consumidos.length -1].quantidade;
-
-    let tdProduto = document.createElement('td');
-    tdProduto.innerHTML = consumidos[consumidos.length -1].produto;
-
-    let tdValor = document.createElement('td');
-    tdValor.innerHTML = consumidos[consumidos.length -1].valor;
+    let tdQuant = tagTd(quantidade);
+    let tdProduto = tagTd(produto);
+    let tdValor = tagTd(valor);
 
     let btnApaga = document.createElement('button');
     btnApaga.innerHTML = 'X';
@@ -62,8 +62,15 @@ const creatTable = () =>{
     table.append(postTable);
 }
 
-
+const somaTotal = ()=>{
+    let total = 0
+    let valor = quantidade*valor;
+    console.log(total)
+    return total
+}
  
+
+
 //funçao de submição ao click do botão '+'; 
 formulario.addEventListener('submit', (evento) => {
     evento.preventDefault();
@@ -73,6 +80,8 @@ formulario.addEventListener('submit', (evento) => {
     consumidos.push({id:consumidos.length +1, produto:produto.value, quantidade:quantidade.value, valor:valor.value});
     console.log(consumidos);
     creatTable();
+    valorTotal = somaTotal();
+    formulario.reset();
     
     }
 });
