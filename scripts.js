@@ -5,6 +5,8 @@ const quantidade = formulario.querySelector('#inputquantidade');
 const valor = formulario.querySelector('#inputvalor');
 const tabela = document.querySelector('table');
 let total = 0;
+const valorTotal = document.querySelector('#total');
+
 
 //cria lista dos produtos que foram consumidos;
 let consumidos = [];
@@ -73,14 +75,14 @@ formulario.addEventListener('submit', (evento) => {
     consumidos.push({id:consumidos.length +1, produto:produto.value, quantidade:quantidade.value, valor:valor.value});
     console.log(consumidos);
     creatTable();
-    valorTotal = somaTotal();
+    somaTotal();
     formulario.reset();
-    
+    return consumidos
     }
 });
 
+//soma o valor total da aplicação;
 const somaTotal = ()=>{
-    const valorTotal = document.querySelector('#total');
     valorTotal.innerHTML = '';
 
     let gasto = 0
@@ -102,6 +104,12 @@ const apagaConsumo = (b) => {
 
     for(let i = 0; i < consumidos.length; i++)
         if(consumidos[i].id == bId){
+            //subtrai valor na soma total;
+            valorTotal.innerHTML = '';
+            total -= consumidos[i].quantidade * consumidos[i].valor;
+            console.log(total);
+            valorTotal.innerHTML = total;
+            
             consumidos.splice(i, 1);
             
             //apaga da tela dados slavos de consumidos;
@@ -109,6 +117,8 @@ const apagaConsumo = (b) => {
             
             console.log(consumidos);
             tabela.removeChild(apagaTr);
+            return total
+
         }
         
     }
