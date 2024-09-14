@@ -84,10 +84,11 @@ formulario.addEventListener('submit', (evento) => {
 //soma o valor total da aplicação;
 const somaTotal = ()=>{
     valorTotal.innerHTML = '';
-
+    
     let gasto = 0
     for(let i=0; i < consumidos.length; i++){
-        gasto = consumidos[i].quantidade * consumidos[i].valor;
+        let converteVirgula = consumidos[i].valor.replace(',', '.');
+        gasto = consumidos[i].quantidade * converteVirgula;
     }
     total = total + gasto;
     console.log(total);    
@@ -105,8 +106,9 @@ const apagaConsumo = (b) => {
     for(let i = 0; i < consumidos.length; i++)
         if(consumidos[i].id == bId){
             //subtrai valor na soma total;
+            let converteVirgula = consumidos[i].valor.replace(',', '.');
             valorTotal.innerHTML = '';
-            total -= consumidos[i].quantidade * consumidos[i].valor;
+            total -= consumidos[i].quantidade * converteVirgula;
             console.log(total);
             valorTotal.innerHTML = total;
             
