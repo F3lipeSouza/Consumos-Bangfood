@@ -1,3 +1,4 @@
+
 //captura dados do produto, quantidade e preço;
 const formulario = document.querySelector('form');
 const produto = formulario.querySelector('#inputproduto');
@@ -5,11 +6,11 @@ const quantidade = formulario.querySelector('#inputquantidade');
 const valor = formulario.querySelector('#inputvalor');
 const tabela = document.querySelector('table');
 let total = 0;
-const valorTotal = document.querySelector('#total');
-
+const valorTotal = document.querySelector('#total'); 
 
 //cria lista dos produtos que foram consumidos;
-let consumidos = [];
+let consumidos = JSON.parse(localStorage.getItem('consumidos')) || Array();
+
 
 //verifica se entradas foram preenchidas;
 function entradaVazia (entrada, mensagem){
@@ -34,18 +35,19 @@ function validaDados (){
     
 }
 
- const tagTd = (inf)=>{
+const tagTd = (inf)=>{
     document.createElement('td');
     innerHTML = consumidos[consumidos.length -1].inf;
     return inf.value
- }
+}
 
 //cria tabela dinamica de produtos consumidos;
-const creatTable = () =>{
+const creatTable = (quant, prod, val) =>{
     //cria tabela na memoria;
-    let tdQuant = tagTd(quantidade);
-    let tdProduto = tagTd(produto);
-    let tdValor = tagTd(valor);
+    
+    let tdQuant = tagTd(quant);
+    let tdProduto = tagTd(prod);
+    let tdValor = tagTd(val);
 
     let btnApaga = document.createElement('button');
     btnApaga.innerHTML = 'X';
@@ -65,16 +67,17 @@ const creatTable = () =>{
 }
 
 
-
 //funçao de submição ao click do botão '+'; 
 formulario.addEventListener('submit', (evento) => {
     evento.preventDefault();
 
+
+
     if(validaDados() === false ){
 
     consumidos.push({id:consumidos.length +1, produto:produto.value, quantidade:quantidade.value, valor:valor.value});
-    console.log(consumidos);
-    creatTable();
+    localStorage.setItem("consumidos", JSON.stringify(consumidos));
+    creatTable(quantidade, produto, valor);
     somaTotal();
     formulario.reset();
     return consumidos
@@ -91,7 +94,6 @@ const somaTotal = ()=>{
         gasto = consumidos[i].quantidade * converteVirgula;
     }
     total = total + gasto;
-    console.log(total);    
     valorTotal.innerHTML = total;
     return total
 }
@@ -123,7 +125,4 @@ const apagaConsumo = (b) => {
 
         }
         
-    }
-    
-
-
+}
