@@ -1,3 +1,8 @@
+//verifica se usuario esta logado no sistema;
+let logado = JSON.parse(sessionStorage.getItem('logado'));
+if(!logado){
+    window.location.href = 'login.html';
+}
 
 //captura dados do produto, quantidade e preço;
 const formulario = document.querySelector('form');
