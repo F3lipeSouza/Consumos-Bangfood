@@ -39,9 +39,9 @@ function validaDados (){
 }
 
 const tagTd = (inf)=>{
-    document.createElement('td');
-    innerHTML = consumidos[consumidos.length -1].inf;
-    return inf
+    const td =document.createElement('td');
+    td.innerHTML = inf;
+    return td
 }
 
 //cria tabela dinamica de produtos consumidos;

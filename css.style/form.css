@@ -109,6 +109,7 @@ td{
 }
 
 .tabela{
+    padding-left: 16px;
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
@@ -124,6 +125,13 @@ td{
     .submit{
         width: 420px;
     }
+
+    .tabela{
+        padding-left: 16px;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    
 
     
 }
