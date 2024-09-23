@@ -47,10 +47,12 @@ const tagTd = (inf)=>{
 //cria tabela dinamica de produtos consumidos;
 const creatTable = (quant, prod, val) =>{
     //cria tabela na memoria;
-    
+
+    let currency = new Intl.NumberFormat('pt-br', {style:'currency', currency: 'BRL'}).format(val.replace(',','.'));
+
     let tdQuant = tagTd(quant);
     let tdProduto = tagTd(prod);
-    let tdValor = tagTd(val);
+    let tdValor = tagTd(currency);
 
     let btnApaga = document.createElement('button');
     btnApaga.innerHTML = 'X';
@@ -97,11 +99,9 @@ const somaTotal = ()=>{
         gasto += parseFloat(consumidos[i].quantidade) * parseFloat(converteVirgula);
     }
     total += parseFloat(gasto);
-    valorTotal.innerHTML = total;
+    valorTotal.innerHTML = new Intl.NumberFormat('pt-br', {style:'currency', currency:'BRL'}).format(total);
     return total
 }
-
-
 
 //apaga da memoria dados salvos de consumidos;
 const apagaConsumo = (b) => {
