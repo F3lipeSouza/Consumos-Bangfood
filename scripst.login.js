@@ -1,3 +1,8 @@
+let login = JSON.parse(sessionStorage.getItem('logado'));
+if(login){
+    window.location.href = 'index.html';
+}
+
 const email = 'admin@gmail.com';
 const senha = '123456';
 const form = document.querySelector('form');
@@ -25,4 +30,6 @@ form.addEventListener('submit', (evt)=>{
     logado();
 
 })
+
+
 
