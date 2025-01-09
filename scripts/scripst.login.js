@@ -1,17 +1,20 @@
+
 let login = JSON.parse(sessionStorage.getItem('logado'));
 if(login){
     window.location.href = 'index.html';
 }
 
+const form = document.querySelector('form');
 const email = 'admin@gmail.com';
 const senha = '123456';
-const form = document.querySelector('form');
+const button = form.querySelector('#cadastreSe');
+    button.addEventListener('click', ()=>{
+        window.location.href = 'register.html';
+    })
 
-console.log(email);
-console.log(senha);
 
 //certifia que email e senha estão corretos;
-let logado = () => {
+let logado = async () => {
     const inputEmail = document.querySelector('#loginEmail');
     const inputSenha = document.querySelector('#loginSenha');
 

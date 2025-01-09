@@ -5,6 +5,7 @@ if(!logado){
 }
 
 
+
 //captura dados do produto, quantidade e preço;
 const formulario = document.querySelector('form');
 const produto = formulario.querySelector('#inputproduto');
