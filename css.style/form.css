@@ -50,6 +50,14 @@
     width: 420px;
 }
 
+button{
+    width: 24px;
+    background-color: red;
+    font-weight: bolder;
+    color: white;
+    border-radius: 8px;
+}
+
 .button{
     background-color: #fcd3a1;
     border-radius: 16px;
