@@ -5,8 +5,6 @@ if(login){
 }
 
 const form = document.querySelector('form');
-const email = 'admin@gmail.com';
-const senha = '123456';
 const button = form.querySelector('#cadastreSe');
     button.addEventListener('click', ()=>{
         window.location.href = 'register.html';
@@ -32,7 +30,7 @@ let logado = async () => {
             sessionStorage.setItem('logado', true);
             window.location.href = 'index.html';
         }else{
-            alert('usuario ou senha incorretos!')
+            alert(data.message)
         }
     }catch{}        
 }
